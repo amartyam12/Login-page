@@ -9,20 +9,49 @@ body{
 h1{
     color: aliceblue;
 }
-input{
-    color: rgb(6, 38, 182);
-}
 input:hover{
     color: aqua;
-}
-a{
-    color: blue;
 }
 small{
     color: khaki;
 }
 .signup{
-   padding: auto;
-   color:blue;
+    background-color:blueviolet;
+    padding: auto;
+    color:rgb(250, 242, 250);
+    background-clip: padding-box;
+    border-style: hidden;
+}
+.signin{
+    background-color:blueviolet;
+    padding: auto;
+    color:rgb(250, 242, 250);
+    background-clip: padding-box;
+    border-style: hidden;
+
+}
+.username{
+    background-color:transparent;
+    padding: auto;
+    color:rgb(250, 242, 250);
+    background-clip: padding-box;
+    border-style:var(3D);
+
+}
+.password{
+    background-color:transparent;
+    padding: auto;
+    color:rgb(250, 242, 250);
+    background-clip: padding-box;
+    border-style:var(3D);
+}
+.forget{
+    color: blue;
+}
+.forget:hover{
+    color: white;
+}
+.remember{
+    
 }
 
