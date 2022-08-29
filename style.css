@@ -12,10 +12,17 @@ h1{
 input{
     color: rgb(6, 38, 182);
 }
+input:hover{
+    color: aqua;
+}
 a{
     color: blue;
 }
 small{
     color: khaki;
+}
+.signup{
+   padding: auto;
+   color:blue;
 }
 
