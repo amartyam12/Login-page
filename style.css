@@ -1,0 +1,21 @@
+ 
+#one {
+height: auto;
+margin: auto;
+}
+body{
+    background-image: url("https://images.unsplash.com/photo-1622976480059-1e341a28786e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHNvbGlkJTIwcGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+h1{
+    color: aliceblue;
+}
+input{
+    color: rgb(6, 38, 182);
+}
+a{
+    color: blue;
+}
+small{
+    color: khaki;
+}
+
