@@ -1,0 +1,58 @@
+@echo off
+setlocal enabledelayedexpansion
+
+:: Get today's date from WMIC
+for /f %%a in ('wmic os get LocalDateTime ^| find "."') do set datetime=%%a
+set year=%datetime:~0,4%
+set month=%datetime:~4,2%
+set day=%datetime:~6,2%
+
+:: Subtract one day
+set /a day=1%day% - 1
+set /a day=100 + %day%
+set day=%day:~-2%
+
+:: Handle month/year rollover
+if %day%==00 (
+    set /a month=1%month% - 1
+    set /a month=100 + %month%
+    set month=%month:~-2%
+
+    if %month%==00 (
+        set month=12
+        set /a year=%year% - 1
+    )
+
+    :: Handle last day of previous month
+    if "%month%"=="01" set day=31
+    if "%month%"=="02" (
+        set /a leap=year %% 4
+        if !leap! == 0 (
+            set day=29
+        ) else (
+            set day=28
+        )
+    )
+    if "%month%"=="03" set day=31
+    if "%month%"=="04" set day=30
+    if "%month%"=="05" set day=31
+    if "%month%"=="06" set day=30
+    if "%month%"=="07" set day=31
+    if "%month%"=="08" set day=31
+    if "%month%"=="09" set day=30
+    if "%month%"=="10" set day=31
+    if "%month%"=="11" set day=30
+    if "%month%"=="12" set day=31
+)
+
+:: Format folder name as DDMMYYYY
+set folderName=%day%%month%%year%
+
+:: Create folder in B
+mkdir "B\%folderName%"
+
+:: Copy test.txt from A to new folder in B
+copy "A\test.txt" "B\%folderName%"
+
+echo File copied to B\%folderName% successfully.
+pause
